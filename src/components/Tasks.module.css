@@ -56,4 +56,86 @@
             }
         }
     }
+
+    .task{
+        list-style-type: none;
+        display: flex;
+        flex-wrap: nowrap;
+        gap: .75rem;
+        padding: 1rem;
+        background-color: var(--gray-500);
+        border-radius: 8px;
+        margin-bottom: 1rem;
+
+        .checkboxWrapper{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 1.090625rem;
+            height: 1.090625rem;
+            border-radius: 50px;
+            border: solid 2px var(--blue);
+            transition: background-color 0.1s ease-in-out;
+            margin: 5px;
+    
+            &:hover{
+                background-color: var(--blue-dark);
+            }
+    
+            input{
+                opacity: 0;
+            }
+    
+            &:has(input:checked) {
+                border: solid 2px var(--purple-dark);
+                background-color: var(--purple-dark);
+                background-image: url('../assets/svgs/check.svg');
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: 0.6rem;
+                transition: background-color 0.1s ease-in-out;
+    
+                &:hover{
+                    background-color: var(--purple);
+                    border: solid 2px var(--purple);
+                }
+            }
+        }
+
+        p {
+            font-size: .875rem;
+            flex: 1;
+        }
+
+        button{
+            background-color: transparent;
+            background-image: url('../assets/svgs/trash.svg');
+            background-repeat: no-repeat;
+            background-position: center;
+            border: none;
+            cursor: pointer;
+            box-sizing: border-box;
+            width: 1.5rem;
+            height: 1.5rem;
+            border-radius: 4px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: background-color  0.1s ease-in-out;
+
+            &:hover{
+                background-image: url('../assets/svgs/trash-hover.svg');
+                background-color: var(--gray-400);
+            }
+        }
+
+        &:has(input:checked) {
+            p {
+                text-decoration: line-through;
+                color: var(--gray-300);
+            }
+        }
+    }
+
+
 }
